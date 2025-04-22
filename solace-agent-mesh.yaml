@@ -40,7 +40,7 @@ solace_agent_mesh:
     # Build directory for the generated files
     build_directory: build
     # Extract all environment variable names from all config files
-    extract_env_vars: true
+    extract_env_vars: false
     # Logging configuration
     log_level_override: INFO
     # The number of instances of the orchestrator component to run in parallel

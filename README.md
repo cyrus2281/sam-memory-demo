@@ -2,7 +2,7 @@
 
 ## What is Solace Agent Mesh (SAM)? 
 
-Solace Agent Mesh (SAM) is an open-source agentic framework purpose-built to help you create collaborative AI systems that can interact with real-world data and systems in a flexible, event-driven way. 
+[Solace Agent Mesh (SAM)](https://github.com/SolaceLabs/solace-agent-mesh) is an open-source agentic framework purpose-built to help you create collaborative AI systems that can interact with real-world data and systems in a flexible, event-driven way. 
 
 Rather than being a monolithic AI platform, SAM is a composable, scalable integration layer for AI agents. It connects agents, data sources, and gateways so they can work together to solve complex tasks. 
 
@@ -121,3 +121,27 @@ graph TD
 
 
 ```
+
+## Running the Example
+
+To run the example, follow these steps:
+
+Ensure you have the [solace-agent-mesh](https://github.com/SolaceLabs/solace-agent-mesh) package installed. If you haven't done so, you can install it using the following command:
+
+```bash
+pip install solace-agent-mesh
+```
+
+Then, navigate to the `sam-memory-demo` directory.
+
+Copy the [`.env.template`](./.env.template) file to a new file named `.env` and fill in the required environment variables.
+
+Next, run the following command to start the Solace Agent Mesh:
+
+```bash
+sam run -b
+```
+
+This command will start the Solace Agent Mesh with the provided configuration.
+
+Once the Solace Agent Mesh is running, you can interact with it through the Web UI.
