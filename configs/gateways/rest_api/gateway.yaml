@@ -8,6 +8,37 @@
       max_characters: 50000
       enforce_alternate_message_roles: true
 
+    #######################################################
+    ### Configurations for the long-term memory feature ###
+    
+    enable_long_term_memory: true # Enables the long-term memory feature
+    long_term_memory_config: # Required if enable_long_term_memory is set to true
+      summary_time_to_live: 432000 # How long to keep the session summary before forgetting, default 5 Days in seconds
+      llm_config: # LLM configuration to be used for the AI features of the long-term memory
+        model: ${LLM_SERVICE_PLANNING_MODEL_NAME}
+        api_key: ${LLM_SERVICE_API_KEY}
+        base_url: ${LLM_SERVICE_ENDPOINT}
+      store_config: # Configuration for storing long-term memory
+
+        # If history provider type is "file"
+        type: "file" # History Provider
+        # Other configs required for the history provider
+        path: /tmp/history  # Required for file history provider
+
+        # If history provider type is "sql"
+        # type: "sql"
+        # db_type: "postgres"
+        # sql_host: "localhost"
+        # sql_user: "admin"
+        # sql_password: "admin"
+        # sql_database: "history_db"
+        # table_name: "session_history"
+
+
+    ###         End of long-term memory config          ###
+    #######################################################
+
+
 - identity_config: &default_identity_config
     type: "passthru" # "passthru", "bamboohr", or your custom module name
     module_path: . # Path to module, Only needed if you are using a custom module
